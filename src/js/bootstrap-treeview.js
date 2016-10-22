@@ -35,7 +35,7 @@
 
 		expandIcon: 'glyphicon glyphicon-plus',
 		collapseIcon: 'glyphicon glyphicon-minus',
-		emptyIcon: 'glyphicon',
+		emptyIcon: '',
 		nodeIcon: '',
 		selectedIcon: '',
 		checkedIcon: 'glyphicon glyphicon-check',
@@ -521,9 +521,7 @@
 				.attr('style', _this.buildStyleOverride(node));
 
 			// Add indent/spacer to mimic tree structure
-			for (var i = 0; i < (level - 1); i++) {
-				treeItem.append(_this.template.indent);
-			}
+			treeItem.css("padding-left", level * 20 - 5);
 
 			// Add expand, collapse or empty spacer icons
 			var classList = [];
